@@ -31,6 +31,14 @@ html {
 body{
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+body > *{
+    max-width: 1350px;
 }
 .button{
     background-color: var(--blue2);
@@ -52,21 +60,26 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
+    position: relative;
+    top: 0;
 }
 nav{
     background-color: var(--blue2);
     border-bottom-right-radius: 5rem;
     width: 70%;
-    height: 100%;
+    height: fit-content;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     padding: 1rem 8rem;
     align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 nav .logo-container{
     width: 20%;
+    min-width: 15rem;
 }
 nav .logo-container img{
     width: 100%;
@@ -85,6 +98,7 @@ ul li > *{
     margin: 0%;
     color: white;
     font-size: small;
+    text-wrap: nowrap;
 }
 .login-signup-container{
     width: 30%;
@@ -93,10 +107,14 @@ ul li > *{
     align-items: flex-end;
     flex-direction: column;
     gap: .5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 .header-button {
     background-color: var(--blue2);
     width: 50%;
+    min-width: 17rem;
     padding: .5rem;
     display: flex;
     flex-wrap: nowrap;
@@ -106,6 +124,9 @@ ul li > *{
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
     padding-left: 1.5rem;
+    right: 0;
+    position: absolute;
+    top: 2.5rem;
 }
 .header-button i{
     font-size: 3rem;
@@ -114,6 +135,7 @@ ul li > *{
 .header-button a{
     font-size: small;
     color: white;
+    text-wrap: nowrap;
 }
 
 /* Style for the active page link */
@@ -127,21 +149,23 @@ nav ul li a.active {
 }
 
 .background1{
+    padding: 0rem 8rem 0 8rem;
     width: 100%;
-    height: 90vh;
+    height: 95vh;
     background-color: #219EBC;
     z-index: -1;
     display: flex;
+    gap: 2rem;
 }
 
 .text-container{
-    padding-top: 16rem;
-    padding-left: 8rem;
     width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 2rem;
+    flex: 1;
 }
 
 .text-container h1{
@@ -168,14 +192,16 @@ nav ul li a.active {
 }
 
 .image-container{
-    width: 60%;
+    width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1;
 }
 .image-container .coins-container{
-    width: 60%;
+    width: 80%;
+    min-width: 40rem;
     display: flex;
     justify-content: center;
     position: relative;
@@ -218,7 +244,6 @@ nav ul li a.active {
 
  .process-section{
     width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: row-reverse;
@@ -232,6 +257,7 @@ nav ul li a.active {
     flex-direction: column;
     padding-top: 8rem;
     gap: 2rem;
+    flex: 1;
  }
  .process-text-container h2{
     color: var(--blue2);
@@ -266,6 +292,7 @@ nav ul li a.active {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    flex-shrink: 0;
  }
  .process-text-container ul li strong{
     color: var(--blue2);
@@ -279,17 +306,20 @@ nav ul li a.active {
     display: flex;
     justify-content: center;
     padding-top: 8rem;   
+    flex: 1;
  }
  .process-image-container img{
     width: 70%;
+    min-width: 30rem;
+    max-width: 40rem;
     height: fit-content;
+    flex: 1;
  }
 
  /*          About Section           */
 
 .about-section{
     width: 100%;
-    height: 100vh;
     padding: 7rem 0rem 0 8rem;
     display: flex;
     flex-direction: row-reverse;
@@ -300,6 +330,7 @@ nav ul li a.active {
     position: relative;
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 .about-pics-container .profile-background{
     width: 100%;
@@ -337,8 +368,7 @@ nav ul li a.active {
     flex-direction: column;
     align-items: flex-start;
     width: 45%;
-    padding-right: 8rem;
-    padding-top: 5rem;
+    padding-right: 3rem;
     gap: 3rem;
 }
 
@@ -366,14 +396,17 @@ nav ul li a.active {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    gap: 4rem;
-    padding: 4rem 0;
+    gap: 2rem;
+    padding: 3rem 2rem;
     border-radius: 5rem;
 }
 
 .trust-section > *{
     width: 25%;
     height: fit-content;
+    flex: 1;
+    max-width: 30rem;
+    min-width: 25rem;
 }
 
 .testimonial-card {
@@ -466,6 +499,7 @@ nav ul li a.active {
     position: relative;
     width: 60%;
     max-width: 100rem;
+    min-width: 60rem;
     margin: 2rem auto;
     text-align: center;
     display: flex;
@@ -539,7 +573,7 @@ nav ul li a.active {
     color: #fff;
     display: flex;
     padding-top: 4rem;
-
+    width: 100%;
 }
 
 .footer-container {
@@ -552,7 +586,6 @@ nav ul li a.active {
 
 .footer-top{
     display: flex;
-    flex-wrap: nowrap;
     width: 100%;
     justify-content: center;
 }
@@ -623,10 +656,26 @@ nav ul li a.active {
     text-decoration: underline;
 }
 
-/* Responsive styling */
-@media (max-width: 768px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        text-align: left;
+/* Responsive styling*/
+
+@media (max-width: 1017px){
+    .background1{
+        padding-right: 4rem;
+        padding-left: 4rem;
+    }
+
+    nav{
+        padding-right: 4rem;
+        padding-left: 4rem;
+    }
+    .background1 .text-container h1{
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+    .background1 .text-container p{
+        font-size: 1.4rem;
+    }
+    .background1 .image-container .coins-container{
+        min-width: 35rem;
     }
 }
