@@ -161,11 +161,11 @@ nav ul li a.active {
 .hero-design{
     z-index: 0;
     width: 60%;
-    position: absolute;
+    position: absolute !important;
     left: 5rem;
     top: 50%;
     transform: translateY(-50%);
-    opacity: 10%;
+    opacity: 10% !important;
 }
 .text-container{
     width: 50%;
